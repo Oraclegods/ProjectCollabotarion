@@ -1,6 +1,6 @@
-# # 🏍️ E-Commerce API
+# 🏍️ E-Commerce API
 
-An e-commerce REST API built with Node.js, Express, and MongoDB. This backend service handles user authentication, product listings, cart operations, order processing, and more.
+An e-commerce REST API built with Node.js, Express, and MongoDB (native driver). This backend service handles user authentication, product listings, cart operations, order processing, and more.
 
 ## 🚀 Features
 
@@ -19,7 +19,7 @@ An e-commerce REST API built with Node.js, Express, and MongoDB. This backend se
 ## 🧱 Tech Stack
 
 * **Backend:** Node.js, Express
-* **Database:** MongoDB (with Mongoose or native driver)
+* **Database:** MongoDB (Native Driver)
 * **Authentication:** JWT + bcrypt
 * **Documentation:** Swagger
 * **Testing:** Jest
@@ -32,111 +32,33 @@ An e-commerce REST API built with Node.js, Express, and MongoDB. This backend se
 
 Stores customer data and credentials.
 
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "passwordHash": "...",
-  "role": "user",
-  "address": "Lagos, Nigeria"
-}
-```
-
 ### 2. `products`
 
 Holds all product details.
-
-```json
-{
-  "title": "Smart Watch",
-  "description": "Touchscreen with fitness tracking",
-  "price": 150.00,
-  "images": ["img1.jpg"],
-  "categoryId": "electronics_id",
-  "stock": 30,
-  "ratings": 4.5
-}
-```
 
 ### 3. `categories`
 
 Defines product groupings (e.g., Electronics, Clothing).
 
-```json
-{
-  "name": "Electronics",
-  "description": "Devices and gadgets"
-}
-```
-
 ### 4. `orders`
 
 Tracks completed purchases by users.
 
-```json
-{
-  "userId": "user_id",
-  "items": [
-    { "productId": "prod_id", "quantity": 2, "price": 100 }
-  ],
-  "totalAmount": 200,
-  "status": "pending",
-  "paymentId": "payment_id"
-}
-```
-
-### 5. `cart` (optional)
+### 5. `cart`
 
 Stores items a user intends to purchase.
-
-```json
-{
-  "userId": "user_id",
-  "items": [
-    { "productId": "prod_id", "quantity": 1 }
-  ]
-}
-```
 
 ### 6. `payments`
 
 Simulated payment records.
 
-```json
-{
-  "userId": "user_id",
-  "orderId": "order_id",
-  "method": "credit_card",
-  "status": "success",
-  "transactionDate": "2025-06-24"
-}
-```
-
 ### 7. `reviews`
 
 Stores user-generated feedback on products.
 
-```json
-{
-  "productId": "prod_id",
-  "userId": "user_id",
-  "rating": 5,
-  "comment": "Great quality!"
-}
-```
-
 ### 8. `admins`
 
 Admin user data for managing the system.
-
-```json
-{
-  "name": "Admin User",
-  "email": "admin@example.com",
-  "passwordHash": "...",
-  "role": "admin"
-}
-```
 
 ---
 
