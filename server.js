@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
-
 require("dotenv").config();
 
 const app = express();
@@ -12,7 +11,11 @@ app.use(express.json());
 
 connectDB();
 
-app.listen(PORT, () =>{
-    console.log(`✅ Web server running at port: ${PORT}`);
-  console.log(`📘 Swagger docs available at http://localhost:${PORT}`)
+// Routers
+const apiRoutes = require("./routes"); 
+app.use('/api', apiRoutes);
+
+app.listen(PORT, () => {
+  console.log(`✅ Web server running at port: ${PORT}`);
+  console.log(`📘 Swagger docs available at http://localhost:${PORT}/api-docs`);
 });
